@@ -1,5 +1,6 @@
 # ShineMovie
 ShineMovie Vision Statement
+
 1.1.     Purpose and Scope
 The purpose of this project is to score the movie, provide hot movies according to the score system, let users rating and evaluate.
 For computer users of all ages who like to watch movies, needs recommendation of hot movies and love to give comment and evaluate watched movies, the ShineMovie web site is a movie rating web site that allows users to get recommendation on hot movies, acquire basic information of movies and watch trailer as well as give comment and rating watched movies. Unlike traditional movie web sites such as IMDB and Cinema Clock, our product provide a concision interface allows users to easily get the recent hot movies as well as rate and comment.
