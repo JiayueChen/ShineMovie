@@ -18,6 +18,10 @@
     background-color: #e91e63
   }
 
+  .theme-pink-color {
+    color: #e91e63;
+  }
+
   .movie-nav {
     color: #fff;
   }
@@ -25,11 +29,12 @@
     color: #fff;
   }
 
- /* .cate-menu.active {
-    border-bottom: 2px solid;
-    border-color: red;
-    }*/
-  </style>
+  .cate-menu .active {
+    color: #e91e63;
+    border-bottom: 2px solid #e91e63;
+  }
+
+</style>
 </head>
 <body>
   <!-- nav bar -->
@@ -116,10 +121,22 @@
   </div>
 
   <div class="container-fluid">
+    <!-- <div class="row my-3 mx-4 cate-menu">
+      <div class="col-12">
+        <div class="container-fluid">
+          <div class="row text-secondary"  style="border-bottom: 1px solid #ccc; line-height: 2.4rem">
+            <div class="col-2 active"><h4>Description</h4></div>
+            <div class="col-2"><h4>Comments</h4></div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Description -->
     <div class="row mx-4 px-5 my-5 text-secondary">
-      <h6 class="mb-3">Description:</h6>
+      <h5 class="mb-3">Description:</h5>
       <span class="ml-4 text-justify">
-        The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.
+        An unprecedented cinematic journey ten years in the making and spanning the entire Marvel Cinematic Universe, Marvel Studios' "Avengers: Infinity War" brings to the screen the ultimate, deadliest showdown of all time. The Avengers and their Super Hero allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.
       </span>
     </div>
   </div>
@@ -127,16 +144,15 @@
   <!-- comment list-->
   <div class="container-fluid">
     <div class="row mx-4 my-3 text-secondary cate-menu" style="border-bottom: 1px solid #ccc">
-      <div class="col-12 active">
-
-        <h3 class="m-0"><i class="far fa-comment-alt"></i> Comment</h3>
+      <div class="col-2 active">
+        <h4 class="m-0"><i class="far fa-comment-alt"></i> Comments</h4>
       </div>
     </div>
 
     <!-- input -->
     <div class="row">
-      <form class="form-inline my-2 my-lg-0 mx-auto">
-        <textarea class="form-control rounded-0 border-white" rows="5" type="text" placeholder="Add a comment..." style="width: 60vw;"></textarea>
+      <form class="form-inline py-5 my-lg-0 mx-auto">
+        <textarea class="form-control rounded-0 border-white" rows="5" type="text" placeholder="Add a comment..." style="width: 50vw;"></textarea>
         <button class="btn text-white rounded-0 theme-pink-bg ml-3" type="submit" style="align-self: flex-end;">
           share
         </button>
@@ -145,30 +161,78 @@
 
     <!-- comment list -->
 
-    <div class="row m-5">
+    <div class="row">
       <div class="container">
-        <div class="row">
+        <!-- first comment -->
+        <div class="row my-4">
           <div class="col-1">
             <i class="fas fa-user fa-2x"></i>
           </div>
           <div class="col-11">
             <div class="container-fluid">
-              <div class="row">
-                <h6>Name</h6>
+
+              <div class="row theme-pink-color">
+                <h5>Name</h5>
                 <i class="fas fa-heart fa ml-auto m-1" style=""></i>
                 <span>878</span>
                 <i class="far fa-minus-square m-1 ml-2" style=""></i>
                 <span>27</span>
               </div>
+
               <div class="row pt-3 text-justify">
-                <p>For the most part, the Russo brothers and Marvel Studios delivered on their promise to bring the disparate corners of film franchise together for a battle against Thanos, all while staying true to the characters who made the MCU so popular. Coming back to the question of whether Avengers: Infinity War lives up to the hype and anticipation, the movie doesn't exceed expectations even though it does meet those expectations.</p>
+                <p>I personally don’t understand the criticism here. This film is dark yes, possibly the darkest film in the MCU, but filled with hope as well. There’s a ton of laughs and humor. I also wasn’t offended by the Jesus joke. I thought it was kind of a clever line, but not blasphemous or anything; however maybe that’s just me… People, who are complaining about the ending of this film, need to understand something, this is only part 1. Part 2 will be released by this time next year. As someone whose read the source material, “Infinity War” is an ENORMOUS story that can’t be told in one film, even if the film has quite a few changes from the graphic novel. This is just a gut wrenching ending to an amazing Act 1. I for one cannot wait to see how this ends next year for the heroes I’ve grown up with for the last 10 years. This is essentially The Empire Strikes Back of Avengers. There is hope because we still have heroes standing. Heroes that will come back to finish what the villian started… which reminds of Christ in a lotta ways and isn’t that what we all want in a movie?</p>
               </div>
-
             </div>
-
-
           </div>
         </div>
+
+        <!-- second comment -->
+         <div class="row my-4">
+          <div class="col-1">
+            <i class="fas fa-user fa-2x"></i>
+          </div>
+          <div class="col-11">
+            <div class="container-fluid">
+
+              <div class="row theme-pink-color">
+                <h5>Name</h5>
+                <i class="fas fa-heart fa ml-auto m-1" style=""></i>
+                <span>878</span>
+                <i class="far fa-minus-square m-1 ml-2" style=""></i>
+                <span>27</span>
+              </div>
+
+              <div class="row pt-3 text-justify">
+                <p>I personally don’t understand the criticism here. This film is dark yes, possibly the darkest film in the MCU, but filled with hope as well. There’s a ton of laughs and humor. I also wasn’t offended by the Jesus joke. I thought it was kind of a clever line, but not blasphemous or anything; however maybe that’s just me… People, who are complaining about the ending of this film, need to understand something, this is only part 1. Part 2 will be released by this time next year. As someone whose read the source material, “Infinity War” is an ENORMOUS story that can’t be told in one film, even if the film has quite a few changes from the graphic novel. This is just a gut wrenching ending to an amazing Act 1. I for one cannot wait to see how this ends next year for the heroes I’ve grown up with for the last 10 years. This is essentially The Empire Strikes Back of Avengers. There is hope because we still have heroes standing. Heroes that will come back to finish what the villian started… which reminds of Christ in a lotta ways and isn’t that what we all want in a movie?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- third comment -->
+         <div class="row my-4">
+          <div class="col-1">
+            <i class="fas fa-user fa-2x"></i>
+          </div>
+          <div class="col-11">
+            <div class="container-fluid">
+
+              <div class="row theme-pink-color">
+                <h5>Name</h5>
+                <i class="fas fa-heart fa ml-auto m-1" style=""></i>
+                <span>878</span>
+                <i class="far fa-minus-square m-1 ml-2" style=""></i>
+                <span>27</span>
+              </div>
+
+              <div class="row pt-3 text-justify">
+                <p>I personally don’t understand the criticism here. This film is dark yes, possibly the darkest film in the MCU, but filled with hope as well. There’s a ton of laughs and humor. I also wasn’t offended by the Jesus joke. I thought it was kind of a clever line, but not blasphemous or anything; however maybe that’s just me… People, who are complaining about the ending of this film, need to understand something, this is only part 1. Part 2 will be released by this time next year. As someone whose read the source material, “Infinity War” is an ENORMOUS story that can’t be told in one film, even if the film has quite a few changes from the graphic novel. This is just a gut wrenching ending to an amazing Act 1. I for one cannot wait to see how this ends next year for the heroes I’ve grown up with for the last 10 years. This is essentially The Empire Strikes Back of Avengers. There is hope because we still have heroes standing. Heroes that will come back to finish what the villian started… which reminds of Christ in a lotta ways and isn’t that what we all want in a movie?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </div>
 
