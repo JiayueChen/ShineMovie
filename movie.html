@@ -25,11 +25,11 @@
     color: #fff;
   }
 
-  .cate-menu.active {
+ /* .cate-menu.active {
     border-bottom: 2px solid;
     border-color: red;
-  }
-</style>
+    }*/
+  </style>
 </head>
 <body>
   <!-- nav bar -->
@@ -39,112 +39,147 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
       <ul class="navbar-nav ml-auto">
-       <form class="form-inline my-2 my-lg-0 ml-auto">
-        <input class="form-control mr-sm-2 border-white" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn text-white rounded-0 theme-pink-bg p-0" type="submit">
-          <i class="fas fa-search fa-md"></i>
-        </button>
-      </form>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Movies</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Ranking</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Comment</a>
-      </li>
-    </ul>
+        <li class="nav-item active mr-5">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2 border-white" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn text-white rounded-0 theme-pink-bg p-0" type="submit">
+              <i class="fas fa-search fa-md"></i>
+            </button>
+          </form>
+        </li>
 
-    <ul class="navbar-nav mx-5">
-      <li>
-        <i class="fas fa-user fa-lg"></i>
-      </li>
-    </ul>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ranking</a>
+        </li>
+        <li class="nav-item mr-5">
+          <a class="nav-link" href="#">Comment</a>
+        </li>
+      </ul>
 
-  </div>
-</nav>
+      <ul class="navbar-nav mr-5 my-2">
+        <li>
+          <i class="fas fa-user fa-lg"></i>
+        </li>
+      </ul>
 
-<div class="container-fluid bg-white" style="box-shadow: 2px 2px 5px 5px #aaa">
-  <div class="row">
-    <!-- trailer -->
-    <div class="col-8 px-0" style="line-height: 0">
-      <iframe width="100%" height="500" src="https://www.youtube.com/embed/QwievZ1Tx-8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
+  </nav>
 
-    <!-- movie name and stars -->
-    <div class="col-4">
-      <div class="pt-5 px-4">
-        <h2>AVENGERS 3 (2018)</h2>
-        <p>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>(213)
-        </p>
-        
-        <!-- movie detail -->
-        <div class="container px-0 pt-5">
-          <div class="row">
-            <div class="col-3"> <p>Director:</p></div>
-            <div class="col-9"> Anthony Russo, Joe Russo</div>
+  <div class="container-fluid bg-white" style="box-shadow: 2px 2px 5px 5px #aaa">
+    <div class="row">
+      <!-- trailer -->
+      <div class="col-8 px-0" style="line-height: 0">
+        <iframe width="100%" height="500" src="https://www.youtube.com/embed/QwievZ1Tx-8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+
+      <!-- movie name and stars -->
+      <div class="col-4">
+        <div class="pt-5 px-4">
+          <h2>AVENGERS 3 (2018)</h2>
+          <p>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>(213)
+          </p>
+
+          <!-- movie detail -->
+          <div class="container px-0 pt-5">
+            <div class="row">
+              <div class="col-3"> <p>Director:</p></div>
+              <div class="col-9"> Anthony Russo, Joe Russo</div>
+            </div>
+            <div class="row">
+              <div class="col-3"> <p>Stars:</p></div>
+              <div class="col-9"><p> Robert Downey Jr., Chris Hemsworth, Mark Ruffalo</p></div>
+            </div>
+            <div class="row">
+              <div class="col-3"> <p>Date:</p></div>
+              <div class="col-9"><p> 27 April 2018</p></div>
+            </div>
+            <div class="row">
+              <div class="col-3"> <p>Genre:</p></div>
+              <div class="col-9"><p>Action, Adventure, Fantasy</p></div>
+            </div>
           </div>
-          <div class="row">
-            <div class="col-3"> <p>Stars:</p></div>
-            <div class="col-9"><p> Robert Downey Jr., Chris Hemsworth, Mark Ruffalo</p></div>
-          </div>
-          <div class="row">
-            <div class="col-3"> <p>Date:</p></div>
-            <div class="col-9"><p> 27 April 2018</p></div>
-          </div>
-          <div class="row">
-            <div class="col-3"> <p>Genre:</p></div>
-            <div class="col-9"><p>Action, Adventure, Fantasy</p></div>
-          </div>
+
         </div>
-
       </div>
     </div>
   </div>
-</div>
 
-<div class="container-fluid">
-  <div class="row mx-4 px-5 my-5 text-secondary">
-    <h6 class="mb-3">Description</h6>
-    <span class="ml-4">
-    The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.
-    </span>
-  </div>
-</div>
-
-<div class="container-fluid">
-  <div class="row mx-4 my-3 text-secondary cate-menu" style="border-bottom: 1px solid #ccc">
-    <div class="col-2 active">
-      Comment
+  <div class="container-fluid">
+    <div class="row mx-4 px-5 my-5 text-secondary">
+      <h6 class="mb-3">Description:</h6>
+      <span class="ml-4 text-justify">
+        The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.
+      </span>
     </div>
   </div>
 
-  <div class="row">
-    <form class="form-inline my-2 my-lg-0 mx-auto">
-        <input class="form-control mr-sm-2 border-white" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn text-white rounded-0 theme-pink-bg" type="submit">
-          <i class="fas fa-search fa-md"></i>
+  <!-- comment list-->
+  <div class="container-fluid">
+    <div class="row mx-4 my-3 text-secondary cate-menu" style="border-bottom: 1px solid #ccc">
+      <div class="col-12 active">
+
+        <h3 class="m-0"><i class="far fa-comment-alt"></i> Comment</h3>
+      </div>
+    </div>
+
+    <!-- input -->
+    <div class="row">
+      <form class="form-inline my-2 my-lg-0 mx-auto">
+        <textarea class="form-control rounded-0 border-white" rows="5" type="text" placeholder="Add a comment..." style="width: 60vw;"></textarea>
+        <button class="btn text-white rounded-0 theme-pink-bg ml-3" type="submit" style="align-self: flex-end;">
+          share
         </button>
       </form>
+    </div>
+
+    <!-- comment list -->
+
+    <div class="row m-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-1">
+            <i class="fas fa-user fa-2x"></i>
+          </div>
+          <div class="col-11">
+            <div class="container-fluid">
+              <div class="row">
+                <h6>Name</h6>
+                <i class="fas fa-heart fa ml-auto m-1" style=""></i>
+                <span>878</span>
+                <i class="far fa-minus-square m-1 ml-2" style=""></i>
+                <span>27</span>
+              </div>
+              <div class="row pt-3 text-justify">
+                <p>For the most part, the Russo brothers and Marvel Studios delivered on their promise to bring the disparate corners of film franchise together for a battle against Thanos, all while staying true to the characters who made the MCU so popular. Coming back to the question of whether Avengers: Infinity War lives up to the hype and anticipation, the movie doesn't exceed expectations even though it does meet those expectations.</p>
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-</div>
 
 
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </body>
 </html>

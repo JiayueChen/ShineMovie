@@ -58,13 +58,18 @@
   
 }
 
+/*.cate-menu .active {
+  color: #e91e63;
+  border-bottom: 2px solid #e91e63;
+}
+*/
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
  background-color: #e91e63;
  color: #fff;
  border-radius: 5px 5px 0 0;
 
-}
+ }
 
 
 
@@ -78,19 +83,19 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Movies</a>
+          <a class="nav-link" href="./movie.html">Movies</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="#">Ranking</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item mr-5">
           <a class="nav-link" href="#">Comment</a>
         </li>
       </ul>
-      <ul class="navbar-nav mx-5">
+      <ul class="navbar-nav mr-5">
         <li>
           <i class="fas fa-user fa-lg"></i>
 
@@ -116,7 +121,7 @@
       </form>
     </div>
 
-    <!-- carousel -->
+    <!-- banner -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -129,16 +134,18 @@
       <div class="carousel-inner">
 
         <div class="carousel-item active">
+          <!-- first slide -->
           <img class="d-block w-100" src="./img/avengers.jpg" alt="First slide">
           <!-- Movie name -->
-          <div class="banner-back position-absolute"></div>
-
+          
+          <!-- leftside -->
           <div class=" banner-left position-absolute text-white">
            <h1 class="text-white" style="text-transform: uppercase;" >Avengers</h1>
-           <p>Fantasy Animation Family</p>
+           <p><span class="mr-4">Fantasy Animation Family</span> | <span>Duration 2h</span></p>
            <button type="button" class="btn btn-lg" style="background-color:  #e91e63; color: #fff">View Info</button>
          </div>
 
+         <!-- right side -->
          <div class="banner-right position-absolute text-white p-1">
            <p>Rating<span class="pl-2 text-secondary">based on 3000 reviews</span></p>
            <p>3.4</p>
@@ -146,11 +153,13 @@
          
        </div>
 
+       <!-- second slide -->
        <div class="carousel-item">
-        <img class="d-block w-100" src="./img/deadpool.jpg" alt="Second slide">
-      </div>
+         <img class="d-block w-100" src="./img/deadpool.jpg" alt="Second slide">
+       </div>
 
-      <div class="carousel-item">
+       <!-- third slide -->
+       <div class="carousel-item">
         <img class="d-block w-100" src="./img/quietplace.jpg" alt="Third slide">
       </div>
     </div>
@@ -167,11 +176,25 @@
   </div>
 
   <!-- Genre -->
-  <div class="container-fluid pt-3">
+  <div class="container-fluid">
+
+    <!-- underline menu bar -->
+   <!--  <div class="row my-3 mx-4 cate-menu">
+      <div class="col-12">
+        <div class="container-fluid">
+          <div class="row text-secondary"  style="border-bottom: 1px solid #ccc; line-height: 2.4rem">
+            <div class="col-1 active">All</div>
+            <div class="col-1">All</div>
+            <div class="col-1">All</div>
+          </div>
+        </div>
+      </div>
+    </div> -->
 
 
-    <nav class="" style="">
-      <div class="nav nav-tabs cate-menu" id="cate-tab" role="tablist">
+    <!-- Genre menu bar -->
+    <nav class="cate-menu my-3 mx-4">
+      <div class="nav nav-tabs" id="cate-tab" role="tablist">
         <a class="nav-item nav-link active" id="nav-action-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Action</a>
         <a class="nav-item nav-link" id="nav-sciencefiction-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Science Fiction</a>
         <a class="nav-item nav-link" id="nav-comedy-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Comedy</a>
@@ -187,13 +210,12 @@
     </div> -->
 
 
-
+  
 
     <!-- card -->
 
-
-    <div class="row mx-4 px-4">
-      <div class="col-3 col-md-3 my-2">
+    <div class="row mx-5 px-5">
+      <div class="col-4 col-md-3 my-2">
         <div class="card">
           <img class="card-img-top" src="http://img.sj33.cn/uploads/allimg/201609/7-160926211351.jpg" alt="Card image cap">
           <div class="card-body">
@@ -207,7 +229,7 @@
         </div>
       </div>
 
-       <div class="col-3 col-md-3 my-2">
+      <div class="col-4 col-md-3 my-2">
         <div class="card">
           <img class="card-img-top" src="http://img.sj33.cn/uploads/allimg/201609/7-160926211351.jpg" alt="Card image cap">
           <div class="card-body">
@@ -221,7 +243,7 @@
         </div>
       </div>
 
-       <div class="col-3 col-md-3 my-2">
+      <div class="col-4 col-md-3 my-2">
         <div class="card">
           <img class="card-img-top" src="http://img.sj33.cn/uploads/allimg/201609/7-160926211351.jpg" alt="Card image cap">
           <div class="card-body">
@@ -235,7 +257,7 @@
         </div>
       </div>
 
-       <div class="col-3 col-md-3 my-2">
+      <div class="col-4 col-md-3 my-2">
         <div class="card">
           <img class="card-img-top" src="http://img.sj33.cn/uploads/allimg/201609/7-160926211351.jpg" alt="Card image cap">
           <div class="card-body">
@@ -249,7 +271,7 @@
         </div>
       </div>
 
-       <div class="col-3 col-md-3 my-2">
+      <div class="col-4 col-md-3 my-2">
         <div class="card">
           <img class="card-img-top" src="http://img.sj33.cn/uploads/allimg/201609/7-160926211351.jpg" alt="Card image cap">
           <div class="card-body">
@@ -263,7 +285,7 @@
         </div>
       </div>
 
-       <div class="col-3 col-md-3 my-2">
+      <div class="col-4 col-md-3 my-2">
         <div class="card">
           <img class="card-img-top" src="http://img.sj33.cn/uploads/allimg/201609/7-160926211351.jpg" alt="Card image cap">
           <div class="card-body">
@@ -277,7 +299,7 @@
         </div>
       </div>
 
-       <div class="col-3 col-md-3 my-2">
+      <div class="col-4 col-md-3 my-2">
         <div class="card">
           <img class="card-img-top" src="http://img.sj33.cn/uploads/allimg/201609/7-160926211351.jpg" alt="Card image cap">
           <div class="card-body">
@@ -290,14 +312,8 @@
           </div>
         </div>
       </div>
-
-
-
 
     </div>
-
-
-
 
     <hr>
 
