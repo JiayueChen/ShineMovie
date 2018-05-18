@@ -69,7 +69,7 @@
  color: #fff;
  border-radius: 5px 5px 0 0;
 
- }
+}
 
 
 
@@ -78,8 +78,7 @@
 <body>
   <!-- nav bar -->
   <nav class="navbar navbar-expand-lg navbar-light movie-nav theme-pink-bg">
-    <a class="navbar-brand text-white" href="#">{{name
-    }}</a>
+    <a class="navbar-brand text-white" href="#">{{name}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -196,12 +195,12 @@
     <!-- Genre menu bar -->
     <nav class="cate-menu my-3 mx-4">
       <div class="nav nav-tabs" id="cate-tab" role="tablist">
-        <a class="nav-item nav-link active" id="nav-action-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Action</a>
-        <a class="nav-item nav-link" id="nav-sciencefiction-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Science Fiction</a>
-        <a class="nav-item nav-link" id="nav-comedy-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Comedy</a>
-        <a class="nav-item nav-link" id="nav-romance-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Romance</a>
-        <a class="nav-item nav-link" id="nav-fantasy-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Fantasy</a>
-        <a class="nav-item nav-link" id="nav-crime-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Crime</a>
+        <!-- <a class="nav-item nav-link active" id="nav-action-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">All</a> -->
+        {% for category in categories %}
+        <a class="nav-item nav-link {% if category.id == tag_id %} active {% endif %}" id="nav-action-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">{{category.name}}</a>
+        {% endfor %}
+       <!--  <a class="nav-item nav-link active" id="nav-action-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Action</a> -->
+      
       </div>
     </nav>
    <!--  <div class="tab-content" id="nav-tabContent">
@@ -211,108 +210,31 @@
     </div> -->
 
 
-  
+
 
     <!-- card -->
 
     <div class="row mx-5 px-5">
+
+      {% for movie in movies %}
       <div class="col-4 col-md-3 my-2">
         <div class="card">
-          <img class="card-img-top" src="http://img.sj33.cn/uploads/allimg/201609/7-160926211351.jpg" alt="Card image cap">
+          <img class="card-img-top" src="{{movie.widget_url}}" alt="Card image cap">
           <div class="card-body">
             <div class="float-right border border-danger rounded p-1 theme-pink-color bg-light">
-              4.0
+              {{movie.total_score|number_format(1, '.')}}
             </div>
-            <h5 class="card-title">Arival</h5>
-            <p class="card-text">Action,Thriller,Sci-Fi</p>
+            <h5 class="card-title" style="min-height: 3rem">{{movie.name}}</h5>
+            <p class="card-text">{{movie.genre}}
+              
+              {% set genre = "{{movie}}"|split(',') %}
+              
+            </p>
 
           </div>
         </div>
       </div>
-
-      <div class="col-4 col-md-3 my-2">
-        <div class="card">
-          <img class="card-img-top" src="http://img.sj33.cn/uploads/allimg/201609/7-160926211351.jpg" alt="Card image cap">
-          <div class="card-body">
-            <div class="float-right border border-danger rounded p-1 theme-pink-color bg-light">
-              4.0
-            </div>
-            <h5 class="card-title">Arival</h5>
-            <p class="card-text">Action,Thriller,Sci-Fi</p>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-4 col-md-3 my-2">
-        <div class="card">
-          <img class="card-img-top" src="http://img.sj33.cn/uploads/allimg/201609/7-160926211351.jpg" alt="Card image cap">
-          <div class="card-body">
-            <div class="float-right border border-danger rounded p-1 theme-pink-color bg-light">
-              4.0
-            </div>
-            <h5 class="card-title">Arival</h5>
-            <p class="card-text">Action,Thriller,Sci-Fi</p>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-4 col-md-3 my-2">
-        <div class="card">
-          <img class="card-img-top" src="http://img.sj33.cn/uploads/allimg/201609/7-160926211351.jpg" alt="Card image cap">
-          <div class="card-body">
-            <div class="float-right border border-danger rounded p-1 theme-pink-color bg-light">
-              4.0
-            </div>
-            <h5 class="card-title">Arival</h5>
-            <p class="card-text">Action,Thriller,Sci-Fi</p>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-4 col-md-3 my-2">
-        <div class="card">
-          <img class="card-img-top" src="http://img.sj33.cn/uploads/allimg/201609/7-160926211351.jpg" alt="Card image cap">
-          <div class="card-body">
-            <div class="float-right border border-danger rounded p-1 theme-pink-color bg-light">
-              4.0
-            </div>
-            <h5 class="card-title">Arival</h5>
-            <p class="card-text">Action,Thriller,Sci-Fi</p>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-4 col-md-3 my-2">
-        <div class="card">
-          <img class="card-img-top" src="http://img.sj33.cn/uploads/allimg/201609/7-160926211351.jpg" alt="Card image cap">
-          <div class="card-body">
-            <div class="float-right border border-danger rounded p-1 theme-pink-color bg-light">
-              4.0
-            </div>
-            <h5 class="card-title">Arival</h5>
-            <p class="card-text">Action,Thriller,Sci-Fi</p>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-4 col-md-3 my-2">
-        <div class="card">
-          <img class="card-img-top" src="http://img.sj33.cn/uploads/allimg/201609/7-160926211351.jpg" alt="Card image cap">
-          <div class="card-body">
-            <div class="float-right border border-danger rounded p-1 theme-pink-color bg-light">
-              4.0
-            </div>
-            <h5 class="card-title">Arival</h5>
-            <p class="card-text">Action,Thriller,Sci-Fi</p>
-
-          </div>
-        </div>
-      </div>
+      {% endfor %}
 
     </div>
 

@@ -16,6 +16,13 @@ class DBConnection {
 
 		return $movies;
 	}
+
+	public function getAllCategories() {
+		$stmt = $this->getConnInstant()->query('SELECT * from categories');
+		$categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		return $categories;
+	}
 }
 
 // $db = new DBConnection();
