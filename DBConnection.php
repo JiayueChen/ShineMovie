@@ -11,7 +11,7 @@ class DBConnection {
 	}
 
 	public function getAllMovies() {
-		$stmt = $this->getConnInstant()->query('SELECT * from movies');
+		$stmt = $this->getConnInstant()->query('SELECT * from movies ORDER BY date DESC');
 		$movies = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		return $movies;
