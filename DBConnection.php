@@ -42,10 +42,19 @@ class DBConnection {
 		return $result;
 	}
 
+	public function getMovieByCategoryId($cid) {
+		$stmt = $this->getConnInstant()->prepare('SELECT * FROM movies WHERE genre like :cid ORDER BY date DESC');
+		$stmt->execute(
+			array(':cid'=>'%' .',' . $cid. ',' . '%')
+		);
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $result;
+	}
+
 }
 
 // $db = new DBConnection();
-// var_dump($db->getCommentById(1));
+// var_dump($db->getMovieByCategoryId(12));
 
 
 
