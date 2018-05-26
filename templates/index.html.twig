@@ -253,11 +253,16 @@
       {% for movie in movies %}
       <div class="col-4 col-md-3 my-2">
         <div class="card">
+          <a href="/shinemovie/movie/get/{{movie.id}}">
           <img class="card-img-top" src="{{movie.widget_url}}" alt="Card image cap">
+           </a>
           <div class="card-body">
             <div class="float-right border border-danger rounded p-1 theme-pink-color bg-light">
               {{(movie.total_score / movie.score_number)|number_format(1, '.')}}
             </div>
+            
+              
+           
             <h5 class="card-title" style="min-height: 3rem">{{movie.name}}</h5>
             <p class="card-text">
               

@@ -23,10 +23,29 @@ class DBConnection {
 
 		return $categories;
 	}
+
+	public function getMovieById($id) {
+		$stmt = $this->getConnInstant()->prepare('SELECT * FROM movies WHERE id = :id');
+		$stmt->execute(
+			array(':id'=>$id)
+		);
+		$result = $stmt->fetch();
+		return $result;
+	}
+
+	public function getCommentById($id) {
+		$stmt = $this->getConnInstant()->prepare('SELECT * FROM comments WHERE movie_id = :id');
+		$stmt->execute(
+			array(':id'=>$id)
+		);
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $result;
+	}
+
 }
 
 // $db = new DBConnection();
-// var_dump($db->getAllMovies());
+// var_dump($db->getCommentById(1));
 
 
 
