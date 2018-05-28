@@ -126,6 +126,10 @@
 								</p>
 							</div>
 						</div>
+						<div class="row">
+							<input type="" name="">
+							<button data-id="{{movie.id}}" type="button">Submit score</button>
+						</div>
 					</div>
 
 				</div>
@@ -164,20 +168,27 @@
 	</div>
 
 	<!-- input -->
+
 	<div class="row">
 		<form class="form-inline py-5 my-lg-0 mx-auto">
-			<textarea class="form-control rounded-0 border-white" rows="5" type="text" placeholder="Add a comment..." style="width: 50vw;"></textarea>
-			<button class="btn text-white rounded-0 theme-pink-bg ml-3" type="submit" style="align-self: flex-end;">
+			<textarea id="comment_input" class="form-control rounded-0 border-white" rows="5" type="text" placeholder="Add a comment..." style="width: 50vw;"></textarea>
+			<button id="comment_submit" data-id="{{movie.id}}"	class="btn text-white rounded-0 theme-pink-bg ml-3" type="button" style="align-self: flex-end;">
 				share
 			</button>
 		</form>
-	</div>
 
+		
+	</div>
+	<div class="row">
+		<div class="col-4 align-center" >
+			<div id="result-info"></div>
+		</div>
+	</div>
 	<!-- comment list -->
 
 	<div class="row">
-		<div class="container">
-			<!-- first comment -->
+		<div class="container" id="all-comments">
+			<!-- comment -->
 			{% if comments == false %}
 			<div class="row my-4">
 				<div class="col-1">
@@ -224,18 +235,18 @@
 
 			
 
-		
+
 
 
 		</div>
 	</div>
 	
 
-	  <hr>
+	<hr>
 
-    <footer class="container">
-      <p>Design by Jiayue Chen</p>
-    </footer>
+	<footer class="container">
+		<p>Design by Jiayue Chen</p>
+	</footer>
 
 </div>
 
@@ -246,5 +257,56 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	
+	$('#comment_submit').on('click', function(){
+		var movie_id = $(this).data('id');
+		var content = $('#comment_input').val();
+		$.post(
+			'/shinemovie/comment/submit',
+			{
+				"movie_id":movie_id,
+				"content": content,
+			},
+			function(data) {
+
+				if (data.code == 200) {
+					$('#result-info').html(
+						`<div class="alert alert-success" role="alert">\n` + data.message + `</div>`
+						);
+					$('#all-comments').prepend(
+						`<div class="row my-4">
+						<div class="col-1">
+						<i class="fas fa-user fa-2x"></i>
+						</div>
+						<div class="col-11">
+						<div class="container-fluid">
+
+						<div class="row theme-pink-color">
+						<h5>Name</h5>
+						<i class="fas fa-heart fa ml-auto m-1" style=""></i>
+						<span>-</span>
+						<i class="far fa-minus-square m-1 ml-2" style=""></i>
+						<span>-</span>
+						</div>
+
+						<div class="row pt-3 text-justify">
+						<p>`+ content +`</p>
+						</div>
+						</div>
+						</div>
+						</div>`
+						);
+				} else {
+					$('#result-info').html(
+						`<div class="alert alert-warning" role="alert">\n` + data.message + `</div>`
+						);
+					
+				}
+			},
+			"json"
+			);
+	});
+</script>
 </body>
 </html>

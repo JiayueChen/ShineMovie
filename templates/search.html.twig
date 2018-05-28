@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+	<title>Single Page</title>
+	<style type="text/css">
+	body {
+		background-color: #eee;
+	}
+	.theme-pink-bg {
+		background-color: #e91e63
+	}
+
+	.theme-pink-color {
+		color: #e91e63;
+	}
+
+	.movie-nav {
+		color: #fff;
+	}
+	.movie-nav .navbar-nav .nav-item .nav-link {
+		color: #fff;
+	}
+
+	.cate-menu .active {
+		color: #e91e63;
+		border-bottom: 2px solid #e91e63;
+	}
+
+</style>
+</head>
+<body>
+	<!-- nav bar -->
+	<nav class="navbar navbar-expand-lg navbar-light movie-nav theme-pink-bg">
+		<a class="navbar-brand text-white" href="/ShineMovie/">ShineMovie</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active mr-5">
+					<form class="form-inline my-2 my-lg-0">
+						<input class="form-control mr-sm-2 border-white" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn text-white rounded-0 theme-pink-bg p-0" type="submit">
+							<i class="fas fa-search fa-md"></i>
+						</button>
+					</form>
+				</li>
+
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Movies</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Ranking</a>
+				</li>
+				<li class="nav-item mr-5">
+					<a class="nav-link" href="#">Comment</a>
+				</li>
+			</ul>
+
+			<ul class="navbar-nav mr-5 my-2">
+				<li>
+					<i class="fas fa-user fa-lg"></i>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+
+	 <div class="row mx-5 px-5">
+
+    {% for movie in movies %}
+    <div class="col-4 col-md-3 my-2">
+      <div class="card">
+        <a href="/shinemovie/movie/get/{{movie.id}}">
+          <img class="card-img-top" src="/shinemovie/img/{{movie.widget_url}}" alt="Card image cap">
+        </a>
+        <div class="card-body">
+          <div class="float-right border border-danger rounded p-1 theme-pink-color bg-light">
+            {{(movie.total_score / movie.score_number)|number_format(1, '.')}}
+          </div>
+
+
+
+          <h5 class="card-title" style="min-height: 3rem">{{movie.name}}</h5>
+          <p class="card-text">
+
+
+            {% set genres = movie.genre | split(',') %}
+            {% for genre in genres %}
+            <!-- {{genre}} -->
+            {% for category in categories %}
+            {% if genre == category.id %}
+            <a href="/shinemovie/genre/get/{{category.id}}">{{category.name}}</a>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+
+          </p>
+
+
+
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+  
+
+	<hr>
+
+	<footer class="container">
+		<p>Design by Jiayue Chen</p>
+	</footer>
+
+
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	
+</script>
+</body>
+</html>

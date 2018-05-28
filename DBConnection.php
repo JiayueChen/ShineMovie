@@ -34,7 +34,7 @@ class DBConnection {
 	}
 
 	public function getCommentById($id) {
-		$stmt = $this->getConnInstant()->prepare('SELECT * FROM comments WHERE movie_id = :id');
+		$stmt = $this->getConnInstant()->prepare('SELECT * FROM comments WHERE movie_id = :id ORDER BY date DESC');
 		$stmt->execute(
 			array(':id'=>$id)
 		);
@@ -51,10 +51,46 @@ class DBConnection {
 		return $result;
 	}
 
+	public function insertComment($movie_id,$content) {
+		$stmt = $this->getConnInstant()->prepare('INSERT INTO comments(movie_id,date,content) VALUES (:mid,:date,:content)');
+		$result = $stmt->execute(
+			array(
+				':mid'=>$movie_id,
+				':date'=>date('y-m-d h:i:s'),
+				'content'=>$content,
+			)
+		);
+		
+		return $result;
+	}
+
+	public function search($movie_name) {
+		$stmt = $this->getConnInstant()->prepare('SELECT * FROM movies WHERE name like :movie_name ORDER BY date DESC');
+		$stmt->execute(
+			array(':movie_name'=>'%' . $movie_name. '%')
+		);
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $result;
+	}
+
+	public function addScoreByMovieId($movie_id, $score) {
+		$stmt = $this->getConnInstant()->prepare('INSERT INTO score(movie_id,score,date) VALUES (:mid,:score, :date);UPDATE movies SET total_score=total_score+:score, score_number=score_number+1 WHERE id=:mid;');
+		$result = $stmt->execute(
+			array(
+				':mid'=>$movie_id,
+				':score'=>$score,
+				':date'=>date('y-m-d h:i:s'),
+				
+			)
+		);
+		
+		return $result;
+	}
+
 }
 
 // $db = new DBConnection();
-// var_dump($db->getMovieByCategoryId(12));
+// var_dump($db->addScoreByMovieId(3,5));
 
 
 
