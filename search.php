@@ -13,13 +13,15 @@ class search {
 	public function getMethod() {
 		$movie_name = $_POST['search_name'];
 		$movies = $this->connection->search($movie_name);
+		$categories = $this->connection->getAllCategories();
 
 
 		try {
 			echo $this->twig->render(
 				'search.html.twig',
 				array(
-					'movies'=>$movies
+					'movies'=>$movies,
+					'categories'=>$categories,
 				
 					
 

@@ -100,11 +100,11 @@
 					<div class="container px-0 pt-5">
 						<div class="row">
 							<div class="col-3"> <p>Director:</p></div>
-							<div class="col-9"> Anthony Russo, Joe Russo</div>
+							<div class="col-9">{{movie.director}}</div>
 						</div>
 						<div class="row">
 							<div class="col-3"> <p>Stars:</p></div>
-							<div class="col-9"><p> Robert Downey Jr., Chris Hemsworth, Mark Ruffalo</p></div>
+							<div class="col-9"><p>{{movie.stars}}</p></div>
 						</div>
 						<div class="row">
 							<div class="col-3"> <p>Date:</p></div>
@@ -126,9 +126,12 @@
 								</p>
 							</div>
 						</div>
+
+						<!-- score -->
 						<div class="row">
-							<input type="" name="">
-							<button data-id="{{movie.id}}" type="button">Submit score</button>
+							<input type="input" name="score" id="score_input">
+							<button id="score_submit" data-id="{{movie.id}}" type="button">Submit score</button>
+							<div id="score_result"></div>
 						</div>
 					</div>
 
@@ -306,6 +309,34 @@
 			},
 			"json"
 			);
+	});
+
+
+	$('#score_submit').on('click', function(){
+		var movie_id = $(this).data('id');
+		var score = $('#score_input').val();
+		$.post(
+			'/shinemovie/score/submit',
+			{
+				"movie_id":movie_id,
+				"score": score,
+			},
+			function(data) {
+
+				if (data.code == 200) {
+					$('#score_result').html(
+						`<div class="alert alert-success" role="alert">\n` + data.message + `</div>`
+					);
+				} else {
+					$('#score_result').html(
+						`<div class="alert alert-warning" role="alert">\n` + data.message + `</div>`
+						);
+					
+				}
+			},
+			"json"
+			);
+			
 	});
 </script>
 </body>

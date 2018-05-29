@@ -1,6 +1,6 @@
 <?php 
 
-class genre {
+class score {
 	private $connection;
 	private $twig;
 
@@ -10,29 +10,29 @@ class genre {
 	}
 
 
-	public function getMethod($cid) {
-		$movies = $this->connection->getMovieByCategoryId($cid);
-		$categories = $this->connection->getAllCategories();
+	public function submitMethod() {
+		$movie_id = $_POST['movie_id'];
+		$score = $_POST['score'];
 
-		$a = array('id'=>-1, 'name'=>'All');
-		array_unshift($categories,$a);
+		$result = $this->connection->addScoreByMovieId($movie_id, $score);
 
-		try {
-			echo $this->twig->render(
-				'index.html.twig',
-				array(
-					'movies'=>$movies,
-					'categories'=>$categories,
-					'tag_id'=> $cid ,
-
-					
-
-				)
+		header("Access-Control-Allow-Origin:*");
+		header("Content-Type:application/json;charset=UTF-8");
+		if ($result) {
+			$message = array(
+				'code'=>200,
+				'message'=>'Add score successfully.',
 			);
-		} catch (Exception $e) {
-			echo $e->getMessage();
+			echo json_encode($message);
+		} else {
+			$message = array(
+				'code'=>400,
+				'message'=>'Add score failed. Please try again.',
+			);
+			echo json_encode($message);
 		}
+
 	}
 }
 
- ?>
+?>
