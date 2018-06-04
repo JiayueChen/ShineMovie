@@ -78,7 +78,7 @@
 <body>
   <!-- nav bar -->
   <nav class="navbar navbar-expand-lg navbar-light movie-nav theme-pink-bg">
-    <a class="navbar-brand text-white" href="/ShineMovie/">ShineMovie</a>
+    <a class="navbar-brand text-white" href="/shinemovie/">{{name}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -231,7 +231,7 @@
       <div class="nav nav-tabs" id="cate-tab" role="tablist">
         <!-- <a class="nav-item nav-link active" id="nav-action-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">All</a> -->
         {% for category in categories %}
-        <a class="nav-item nav-link {% if category.id == tag_id %} active {% endif %}" id="{{category.name}}-tab" href="/ShineMovie/genre/get/{{category.id}}" role="tab">{{category.name}}</a>
+        <a class="nav-item nav-link {% if category.id == tag_id %} active {% endif %}" id="{{category.name}}-tab" href="/shinemovie/genre/get/{{category.id}}" role="tab">{{category.name}}</a>
         {% endfor %}
         <!--  <a class="nav-item nav-link active" id="nav-action-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Action</a> -->
 

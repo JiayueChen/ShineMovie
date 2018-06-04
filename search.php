@@ -20,6 +20,7 @@ class search {
 			echo $this->twig->render(
 				'search.html.twig',
 				array(
+					'name'=>'ShineMovie',
 					'movies'=>$movies,
 					'categories'=>$categories,
 				

@@ -21,6 +21,7 @@ class genre {
 			echo $this->twig->render(
 				'index.html.twig',
 				array(
+					'name'=>'ShineMovie',
 					'movies'=>$movies,
 					'categories'=>$categories,
 					'tag_id'=> $cid ,

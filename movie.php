@@ -20,6 +20,7 @@ class movie {
 			echo $this->twig->render(
 				'movie.html.twig',
 				array(
+					'name'=>'ShineMovie',
 					'movie'=>$movie,
 					'categories'=>$categories,
 					'comments'=>$comments,

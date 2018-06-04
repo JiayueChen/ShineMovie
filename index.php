@@ -54,6 +54,7 @@ try {
 	echo $twig->render(
 		'index.html.twig',
 		array(
+			'name'=>'ShineMovie',
 			'movies'=> $movies,
 			'categories'=>$categories,
 			'tag_id'=> -1,
