@@ -315,28 +315,40 @@
 	$('#score_submit').on('click', function(){
 		var movie_id = $(this).data('id');
 		var score = $('#score_input').val();
-		$.post(
-			'/shinemovie/score/submit',
-			{
-				"movie_id":movie_id,
-				"score": score,
-			},
-			function(data) {
+		var pattern = new RegExp("^(?:[0-5])$")
+		var res = pattern.test(score);
+		if (res) {
 
-				if (data.code == 200) {
-					$('#score_result').html(
-						`<div class="alert alert-success" role="alert">\n` + data.message + `</div>`
-					);
-				} else {
-					$('#score_result').html(
-						`<div class="alert alert-warning" role="alert">\n` + data.message + `</div>`
-						);
-					
-				}
-			},
-			"json"
-			);
-			
+			$.post(
+				'/shinemovie/score/submit',
+				{
+					"movie_id":movie_id,
+					"score": score,
+				},
+				function(data) {
+
+					if (data.code == 200) {
+						$('#score_result').html(
+							`<div class="alert alert-success" role="alert">\n` + data.message + `</div>`
+							);
+					} else {
+						$('#score_result').html(
+							`<div class="alert alert-warning" role="alert">\n` + data.message + `</div>`
+							);
+
+					}
+				},
+				"json"
+				);
+		}
+		else {
+			$('#score_result').html(
+				`<div class="alert alert-danger" role="alert">\n` + 'Please enter a number between 0 to 5' + `</div>`
+				);
+		}
+		
+		
+
 	});
 </script>
 </body>

@@ -12,7 +12,8 @@ $db = new DBConnection();
 /* 
  * Route from here
  */
-if (array_key_exists('url', $_GET)) {
+if (array_key_exists('url', $_GET) && ($_GET['url'] != 'genre/get/-1')) {
+
 	$url = $_GET['url'];
 	$param_array = explode('/', $url);
 
@@ -29,6 +30,7 @@ if (array_key_exists('url', $_GET)) {
 	}
 	if (array_key_exists(2, $param_array)) {
 		$handle_obj->$method($param_array[2]);
+
 	} else {
 		$handle_obj->$method();
 	}
